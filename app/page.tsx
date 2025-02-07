@@ -12,7 +12,10 @@ export default async function Home() {
           <div className="mx-auto flex w-4/5 flex-col items-center justify-center space-y-4 text-center">
             <h1 className="text-6xl font-bold">🐛 Bug Movies</h1>
             <p className="text-sm leading-6 text-muted-foreground">
-               Watch your favorite movies and tv shows on bug movies!
+              Find and watch movies instantly with a smooth and effortless experience. The films you want, when you want them.
+              <br></br>
+              <br></br>
+              ⚠️ Use UBlock for the best experience.
             </p>
           </div>
         </section>

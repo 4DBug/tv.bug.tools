@@ -230,13 +230,10 @@ export const CommandSearch = () => {
     <>
       <Button
         variant="outline"
-        className="flex w-full flex-1 justify-between gap-2 pr-2 text-sm text-muted-foreground"
+        className="flex w-full flex-1 justify-between gap-2 text-sm text-muted-foreground"
         onClick={() => setOpen(true)}
       >
-        Search Anything
-        <div className="mobile:hidden flex items-center gap-1 rounded-md bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground">
-          <CommandIcon size={12} />K
-        </div>
+        Search
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
@@ -244,20 +241,6 @@ export const CommandSearch = () => {
           <CommandInput placeholder="Search" onValueChange={setSearch} value={search} />
 
           <CommandList>
-            {recentSearches && (
-              <CommandSearchGroup heading="Recent Searches">
-                {recentSearches.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex cursor-pointer items-center justify-between gap-4 rounded-sm p-2 hover:bg-muted"
-                    onClick={() => setSearch(item)}
-                  >
-                    <span className="truncate whitespace-nowrap text-sm">{item}</span>
-                  </div>
-                ))}
-              </CommandSearchGroup>
-            )}
-
             {isLoading && (
               <div className="space-y-8">
                 <CommandSearchGroup heading="Movies">
@@ -267,18 +250,6 @@ export const CommandSearch = () => {
                 </CommandSearchGroup>
 
                 <CommandSearchGroup heading="Tv Shows">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <CommandSearchSkeleton key={index} />
-                  ))}
-                </CommandSearchGroup>
-
-                <CommandSearchGroup heading="Manga">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <CommandSearchSkeleton key={index} />
-                  ))}
-                </CommandSearchGroup>
-
-                <CommandSearchGroup heading="Drama">
                   {Array.from({ length: 5 }).map((_, index) => (
                     <CommandSearchSkeleton key={index} />
                   ))}
@@ -325,40 +296,6 @@ export const CommandSearch = () => {
                         <span className="whitespace-nowrap text-xs text-muted-foreground">
                           {item.first_air_date && new Date(item.first_air_date).getFullYear()}
                         </span>
-                      </Link>
-                    ))}
-                  </CommandSearchGroup>
-                )}
-
-                {hasMangaResults && (
-                  <CommandSearchGroup heading="Manga">
-                    {mangaResults?.map((item) => (
-                      <Link
-                        key={item.id}
-                        className="flex cursor-pointer items-center justify-between gap-4 rounded-sm p-2 hover:bg-muted"
-                        href={`/manga/${item.id}`}
-                      >
-                        <span className="truncate whitespace-nowrap text-sm">
-                          {item.title.userPreferred || item.title.english || item.title.romaji}
-                        </span>
-
-                        <span className="whitespace-nowrap text-xs text-muted-foreground">
-                          CH: {item.totalChapters}
-                        </span>
-                      </Link>
-                    ))}
-                  </CommandSearchGroup>
-                )}
-
-                {hasDramaResults && (
-                  <CommandSearchGroup heading="Drama">
-                    {dramaResults?.map((item) => (
-                      <Link
-                        key={item.id}
-                        className="flex cursor-pointer items-center justify-between gap-4 rounded-sm p-2 hover:bg-muted"
-                        href={`/drama/${item.id}`}
-                      >
-                        <span className="truncate whitespace-nowrap text-sm">{item.title}</span>
                       </Link>
                     ))}
                   </CommandSearchGroup>
