@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: 'Bug Movies',
+  name: 'tv.bug.tools',
   description:
-    'Watch your favorite movies and tv shows on bug movies!',
+    'Find and watch movies instantly with a smooth and effortless experience. The films you want, when you want them.\n\n⚠️ Use UBlock for the best experience.',
   mainNav: [
     {
       title: 'Movie',

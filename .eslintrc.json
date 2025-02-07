@@ -1,4 +1,1 @@
-{
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
-  "prettier/prettier": ["error", { "endOfLine": "off" }]
-}
+{}
