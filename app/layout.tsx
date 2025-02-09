@@ -10,6 +10,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import '@/styles/globals.css';
 import { SiteHeader } from '@/components/navbar/site-header';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const spaceGrotesk = SpaceGrotesk({ subsets: ['latin'] });
 
@@ -66,6 +67,7 @@ export default function RootLayout({
           <TailwindIndicator />
         </ThemeProvider>
         <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   );
