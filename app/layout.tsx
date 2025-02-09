@@ -9,6 +9,7 @@ import NextTopLoader from 'nextjs-toploader';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import '@/styles/globals.css';
 import { SiteHeader } from '@/components/navbar/site-header';
+import { Analytics } from "@vercel/analytics/react"
 
 const spaceGrotesk = SpaceGrotesk({ subsets: ['latin'] });
 
@@ -64,6 +65,7 @@ export default function RootLayout({
           <Footer />
           <TailwindIndicator />
         </ThemeProvider>
+        <Analytics/>
       </body>
     </html>
   );
