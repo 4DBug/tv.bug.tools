@@ -151,7 +151,7 @@ export default function VideoPlayer({ id }: { id: string }) {
           </div>
         </div>
       </div>
-      <Tabs defaultValue="autoembed">
+      <Tabs defaultValue="vidsrc">
         <div className="flex flex-col items-center">
           <TabsList>
             <TabsTrigger value="autoembed">AutoEmbed</TabsTrigger>
