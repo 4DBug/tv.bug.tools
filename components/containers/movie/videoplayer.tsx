@@ -31,7 +31,7 @@ type VideoSourceKey =
   | 'vidsrcnl';
 
 export default function VideoPlayer({ id }: any) {
-  const [selectedSource, setSelectedSource] = useState<VideoSourceKey>('autoembed');
+  const [selectedSource, setSelectedSource] = useState<VideoSourceKey>('vidsrc');
   const [loading, setLoading] = useState(false);
 
   const videoSources: Record<VideoSourceKey, string> = {
